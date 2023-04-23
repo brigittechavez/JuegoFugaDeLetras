@@ -61,7 +61,7 @@ public final class VentanaRegistro extends JFrame {
         Toolkit miPantalla = Toolkit.getDefaultToolkit();
         
         //CONFIGURANDO LOS MENSAJES EN PANTALLA
-        jlMensaje = new JLabel("Ahora debes realizar el registro",SwingConstants.CENTER);
+        jlMensaje = new JLabel("Regístrate",SwingConstants.CENTER);
         jlNombre = new JLabel("Ingresa tu nombre",SwingConstants.CENTER );
         jlTematica = new JLabel("Selecciona una temática",SwingConstants.CENTER );
         //Contenido
@@ -74,7 +74,7 @@ public final class VentanaRegistro extends JFrame {
         add(jpContenido,0);
         
         //ESTABLECIENDO ATRIBUTOS DEL MENSAJE DE REGISTRO
-        jlMensaje.setBounds(45,50, 519,20);
+        jlMensaje.setBounds(45,80, 519,30);
         jlMensaje.setForeground(Color.BLUE);
         jlMensaje.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
         //ESTABLECIENDO ATRIBUTOS DEL MENSAJE DE NOMBRE
@@ -82,20 +82,24 @@ public final class VentanaRegistro extends JFrame {
         jlNombre.setForeground(Color.BLACK);
         jlNombre.setFont(new Font("Arial", Font.BOLD, 20));
         //ESTABLECIENDO ATRIBUTOS DEL MENSAJE PARA SELECCIONAR LA TEMATICA
-        jlTematica.setBounds(45,180, 519,20);
+        jlTematica.setBounds(45,210, 519,20);
         jlTematica.setForeground(Color.BLACK);
         jlTematica.setFont(new Font("Arial", Font.BOLD, 20));
         
         //AGREGANDO LOS BOTONES
         btnAnimal = new JButton("ANIMAL");
-        btnAnimal.setBounds(210,270, 150,35);
+        btnAnimal.setBounds(230,270, 150,35);
         btnColor = new JButton("COLOR");
-        btnColor.setBounds(255,270, 150,35);
+        btnColor.setBounds(230,310, 150,35);
         btnFruta = new JButton("FRUTA");
-        btnFruta.setBounds(285,270, 150,35);
+        btnFruta.setBounds(230,355, 150,35);
         
         //CONFIGURANDO TEXTNOMBRE
-        
+        txtNombre = new JTextField("");
+        txtNombre.setHorizontalAlignment(JTextField.CENTER);
+        txtNombre.setForeground(Color.GRAY);
+        txtNombre.setFont(new Font("arial", Font.BOLD, 20));      
+        txtNombre.setBounds(200,145,200, 40);
         
         jpContenido.add(jlMensaje);
         jpContenido.add(jlNombre);
@@ -106,4 +110,21 @@ public final class VentanaRegistro extends JFrame {
         jpContenido.add(txtNombre);
     }
     
+    
+    class ManejadorDeEventos implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == btnAnimal){                
+                iniciarJuego();
+            }
+            if(e.getSource() == btnColor){                
+                iniciarJuego();
+            }
+            if(e.getSource() == btnFruta){                
+                iniciarJuego();
+            }
+        }
+        
+    }
 }
