@@ -8,6 +8,6 @@ package Modelo;
  *
  * @author Vanesa
  */
-public class Palabra {
+public class PalabraAleatoria {
     
 }
