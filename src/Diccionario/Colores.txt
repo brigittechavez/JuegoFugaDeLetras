@@ -1,0 +1,13 @@
+Azul
+Rojo
+Amarillo
+Morado
+Verde
+Rosa
+Gris
+Celeste
+Anaranjado
+Dorado
+Beige
+Turquesa
+Blanco
