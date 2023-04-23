@@ -64,6 +64,46 @@ public final class VentanaRegistro extends JFrame {
         jlMensaje = new JLabel("Ahora debes realizar el registro",SwingConstants.CENTER);
         jlNombre = new JLabel("Ingresa tu nombre",SwingConstants.CENTER );
         jlTematica = new JLabel("Selecciona una temática",SwingConstants.CENTER );
+        //Contenido
+        jpContenido = new JPanel();
+        jpContenido.setSize(600,500);        
+        jpContenido.setBounds(0,40, 600, 500);
+        jpContenido.setLayout(null);
+        jpContenido.setOpaque(false);
+        
+        add(jpContenido,0);
+        
+        //ESTABLECIENDO ATRIBUTOS DEL MENSAJE DE REGISTRO
+        jlMensaje.setBounds(45,50, 519,20);
+        jlMensaje.setForeground(Color.BLUE);
+        jlMensaje.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
+        //ESTABLECIENDO ATRIBUTOS DEL MENSAJE DE NOMBRE
+        jlNombre.setBounds(45,120, 519,20);
+        jlNombre.setForeground(Color.BLACK);
+        jlNombre.setFont(new Font("Arial", Font.BOLD, 20));
+        //ESTABLECIENDO ATRIBUTOS DEL MENSAJE PARA SELECCIONAR LA TEMATICA
+        jlTematica.setBounds(45,180, 519,20);
+        jlTematica.setForeground(Color.BLACK);
+        jlTematica.setFont(new Font("Arial", Font.BOLD, 20));
+        
+        //AGREGANDO LOS BOTONES
+        btnAnimal = new JButton("ANIMAL");
+        btnAnimal.setBounds(210,270, 150,35);
+        btnColor = new JButton("COLOR");
+        btnColor.setBounds(255,270, 150,35);
+        btnFruta = new JButton("FRUTA");
+        btnFruta.setBounds(285,270, 150,35);
+        
+        //CONFIGURANDO TEXTNOMBRE
+        
+        
+        jpContenido.add(jlMensaje);
+        jpContenido.add(jlNombre);
+        jpContenido.add(jlTematica);
+        jpContenido.add(btnAnimal);
+        jpContenido.add(btnColor);
+        jpContenido.add(btnFruta);
+        jpContenido.add(txtNombre);
     }
     
 }
