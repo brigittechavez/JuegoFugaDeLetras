@@ -5,6 +5,7 @@
 package Vista;
 
 import Modelo.Jugador;
+//import Diccionario.Animales;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -13,6 +14,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -87,11 +93,11 @@ public final class VentanaRegistro extends JFrame {
         jlTematica.setFont(new Font("Arial", Font.BOLD, 20));
         
         //AGREGANDO LOS BOTONES
-        btnAnimal = new JButton("ANIMAL");
+        btnAnimal = new JButton("ANIMALES");
         btnAnimal.setBounds(230,270, 150,35);
-        btnColor = new JButton("COLOR");
+        btnColor = new JButton("COLORES");
         btnColor.setBounds(230,310, 150,35);
-        btnFruta = new JButton("FRUTA");
+        btnFruta = new JButton("FRUTAS");
         btnFruta.setBounds(230,355, 150,35);
         
         //CONFIGURANDO TEXTNOMBRE
@@ -108,20 +114,49 @@ public final class VentanaRegistro extends JFrame {
         jpContenido.add(btnColor);
         jpContenido.add(btnFruta);
         jpContenido.add(txtNombre);
+        
+        ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
+        
+        btnAnimal.addActionListener(manejadorEventos);
+        btnColor.addActionListener(manejadorEventos);
+        btnFruta.addActionListener(manejadorEventos);
+        //txtNombre.addKeyListener((KeyListener) manejadorEventos);
+        
+        
+        txtNombre.requestFocusInWindow();
     }
     
+    private void iniciarJuego(){
+        String nombre =txtNombre.getText();
+        if(!nombre.trim().isEmpty() || nombre.trim().length() > 0){
+            Jugador jugador = new Jugador(nombre);
+            dispose();
+            VentanaJuego ventanaJuego = new VentanaJuego(jugador);
+            
+        } else {
+            JOptionPane.showMessageDialog(null,"Por favor ingrese su nombre", 
+                    "Advertencia", JOptionPane.ERROR_MESSAGE);
+            txtNombre.requestFocusInWindow();
+        }
     
-    class ManejadorDeEventos implements ActionListener{
+    }
+    class ManejadorDeEventos implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource() == btnAnimal){                
+            String Mensaje = "";
+            if(e.getSource() == btnAnimal){
+                Mensaje = "Ha seleccionado la tematica de Animales";
+                JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 iniciarJuego();
-            }
-            if(e.getSource() == btnColor){                
+                
+            }if(e.getSource() == btnColor){
+                Mensaje = "Ha seleccionado la tematica de Colores";
+                JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 iniciarJuego();
-            }
-            if(e.getSource() == btnFruta){                
+            }if(e.getSource() == btnFruta){
+                Mensaje = "Ha seleccionado la tematica de Frutas";
+                JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
                 iniciarJuego();
             }
         }
