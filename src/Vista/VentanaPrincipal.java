@@ -82,8 +82,14 @@ public final class VentanaPrincipal extends JFrame {
         //CONFIGURACION DE LOS BOTONES DE INICIAR E INSTRUCCIONES
         btnIniciarJuego = new JButton("Iniciar Juego");
         btnIniciarJuego.setBounds(215,200, 150,35);
+        btnIniciarJuego.setBackground(Color.BLUE);
+        btnIniciarJuego.setForeground(Color.WHITE); // Establecer el texto en color blanco
+        btnIniciarJuego.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
         btnInstrucciones = new JButton("Instrucciones");
         btnInstrucciones.setBounds(210,250, 160,35);
+        btnInstrucciones.setBackground(Color.YELLOW);
+        btnInstrucciones.setForeground(Color.BLACK); // Establecer el texto en color blanco
+        btnInstrucciones.setFont(new Font("Comic Sans MS", Font.BOLD, 16));
         
         jpContenido.add(jlMensaje);
         jpContenido.add(jlMensaje1);
