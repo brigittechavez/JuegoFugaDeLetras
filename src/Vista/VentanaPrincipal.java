@@ -109,9 +109,11 @@ public final class VentanaPrincipal extends JFrame {
     }
     //FUNCION PARA MOSTRAR LAS INSTRUCCIONES DEL JUEGO
     private void Instrucciones(){
+        UIManager.put("Panel.background", Color.ORANGE);
+        UIManager.put("OptionPane.background", Color.YELLOW);
         JOptionPane.showMessageDialog(null,
-            "¡Aquí tienes las instrucciones del juego!!, \n\nPrimero Registras tu nombre y escoges la temática con la que te atreves a jugar" + " \n\nA la palabra que te salga le hace falta una vocal, es tu misión decidir cuál de las 5 vocaleses es la correcta para que esa palabra sea válida " +
-            "  \n\nEjemplo: a la palabra coc_ le hace falta una o por lo que tienes que oprimir el botónque contenga esa vocla constante\n", "Instrucciones del Juego",
+            "¡Aquí tienes las instrucciones del juego!!, \n\nPrimero Registras tu nombre y escoges la temática con la que te atreves a jugar" + " \n\nA la palabra que te salga le hace falta una vocal, es tu misión decidir cuál de las 5 vocales es la correcta para que esa palabra sea válida " +
+            "  \n\nEjemplo: A la palabra COC_ le hace falta una o por lo que tienes que oprimir el botón que contenga esa vocal\n", "Instrucciones del Juego",
             JOptionPane.INFORMATION_MESSAGE);
 
             }
