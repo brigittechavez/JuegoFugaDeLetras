@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 /**
  *
@@ -96,8 +97,34 @@ public final class VentanaPrincipal extends JFrame {
         jpContenido.add(btnIniciarJuego);
         jpContenido.add(btnInstrucciones);
         
-        //ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
-        //btnIniciarJuego.addActionListener(manejadorEventos);
-        //btnInstrucciones.addActionListener(manejadorEventos);
+        ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
+        btnIniciarJuego.addActionListener(manejadorEventos);
+        btnInstrucciones.addActionListener(manejadorEventos);
+        
+    }
+    //FUNCION PARA DARLE INICIO AL JUEGO
+    private void iniciarJuego(){
+        VentanaRegistro ventanaRegistro = new VentanaRegistro();
+        
+    }
+    //FUNCION PARA MOSTRAR LAS INSTRUCCIONES DEL JUEGO
+    private void Instrucciones(){
+        JOptionPane.showMessageDialog(null,
+            "¡Aquí tienes las instrucciones del juego!!, \n\nPrimero Registras tu nombre y escoges la temática con la que te atreves a jugar" + " \n\nA la palabra que te salga le hace falta una vocal, es tu misión decidir cuál de las 5 vocaleses es la correcta para que esa palabra sea válida " +
+            "  \n\nEjemplo: a la palabra coc_ le hace falta una o por lo que tienes que oprimir el botónque contenga esa vocla constante\n", "Instrucciones del Juego",
+            JOptionPane.INFORMATION_MESSAGE);
+
+            }
+    class ManejadorDeEventos implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == btnIniciarJuego){                
+                iniciarJuego();
+            }if(e.getSource() == btnInstrucciones){
+                Instrucciones();
+            }
+        }
+        
     }
 }
