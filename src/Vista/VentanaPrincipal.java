@@ -28,7 +28,6 @@ import javax.swing.UIManager;
  * @author juan-
  */
 public final class VentanaPrincipal extends JFrame {
-    //private Fondo jpFondo;
     private JLabel jlMensaje;
     private JLabel jlMensaje1;
     private JPanel jpContenido;
@@ -103,8 +102,9 @@ public final class VentanaPrincipal extends JFrame {
         
     }
     //FUNCION PARA DARLE INICIO AL JUEGO
-    private void iniciarJuego(){
-        VentanaRegistro ventanaRegistro = new VentanaRegistro();
+    private void registrarJuego(){
+        dispose();
+        VentanaRegistro VentanaRegistro = new VentanaRegistro();
         
     }
     //FUNCION PARA MOSTRAR LAS INSTRUCCIONES DEL JUEGO
@@ -122,7 +122,7 @@ public final class VentanaPrincipal extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource() == btnIniciarJuego){                
-                iniciarJuego();
+                registrarJuego();
             }if(e.getSource() == btnInstrucciones){
                 Instrucciones();
             }
