@@ -186,5 +186,42 @@ public class VentanaJuego extends JFrame {
         
         add(jpContenido);
         
+        VentanaJuego.ManejadorDeEventos manejadorEventos = new VentanaJuego.ManejadorDeEventos();
+        btnTerminar.addActionListener(manejadorEventos);
+        btnA.addActionListener(manejadorEventos);
+            
+                
+        
+        addWindowListener(new WindowAdapter() {
+             @Override
+            public void windowClosing(WindowEvent evt) {
+                cerrarVentana();
+            }
+        });
+    }
+    private void cerrarVentana(){
+        int respuesta;
+
+        respuesta = JOptionPane.showConfirmDialog(
+                    null,"¿Realmente dese abandonar el juego?", "Advertencia",
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.WARNING_MESSAGE);
+        if(respuesta == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }
+
+    class ManejadorDeEventos implements ActionListener {
+
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == btnTerminar){
+                cerrarVentana();
+            }
+            //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+            
+        
     }
 }
