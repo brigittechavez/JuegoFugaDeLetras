@@ -27,16 +27,16 @@ public class ControladorJuego {
         }
     }
     
-    public boolean esElNumero(int numero){
+    /*public boolean esElNumero(int numero){
         return intento.esElNumero(numero);            
-    }
+    }*/
     
     public String getJugador(){
         return jugador.getNombre();
     }
     
     public int getNumeroIntento(){
-        return ronda.getNumeroIntento();
+        return intento.getNumeroIntento();
     }
      
      public int getIntentosPartida(){
