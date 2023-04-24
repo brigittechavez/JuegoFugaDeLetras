@@ -3,11 +3,55 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controlador;
+import javax.swing.JOptionPane;
+import Modelo.Jugador;
+import Vista.VentanaJuego;
 
 /**
  *
  * @author Vanesa
  */
 public class ControladorJuego {
+    private Jugador jugador;
+    private Intento mejorIntento;
+    private Intento intento;
     
+    public ControladorJuego(Jugador jugador){
+        this.jugador = jugador;              
+    }
+    
+    public void iniciarJuego(){
+        intento = new Intento();
+        if (intento.getNumeroIntento() == 1){
+            mejorIntento = intento;
+        }
+    }
+    
+    public boolean esElNumero(int numero){
+        return intento.esElNumero(numero);            
+    }
+    
+    public String getJugador(){
+        return jugador.getNombre();
+    }
+    
+    public int getNumeroIntento(){
+        return ronda.getNumeroIntento();
+    }
+     
+     public int getIntentosPartida(){
+        return intento.getIntentosPartida();
+    }
+     
+     //aa
+     
+     public Intento getMejorIntento(){
+         return mejorIntento;
+     }
+     
+     public void compararIntentos(){
+         if(intento.getIntentosPartida() < mejorIntento.getIntentosPartida()){
+             mejorIntento = intento;
+         }
+     }
 }
