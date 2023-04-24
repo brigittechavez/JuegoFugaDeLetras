@@ -22,7 +22,7 @@ public class ControladorJuego {
     
     public void iniciarJuego(){
         intento = new Intento();
-        if (intento.getNumeroIntento() == 1){
+        if (intento.getNumeroPalabra() == 1){
             mejorIntento = intento;
         }
     }
@@ -35,8 +35,8 @@ public class ControladorJuego {
         return jugador.getNombre();
     }
     
-    public int getNumeroIntento(){
-        return intento.getNumeroIntento();
+    public int getNumeroPalabra(){
+        return intento.getNumeroPalabra();
     }
      
      public int getIntentosPartida(){
