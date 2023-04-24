@@ -42,6 +42,7 @@ public final class VentanaRegistro extends JFrame {
     private JButton btnAnimal;
     private JButton btnColor;
     private JButton btnFruta;
+    private String rutaDiccionario = "src/Diccionario/Animales.txt";
     
     public VentanaRegistro(){
         iniciarComponentes();
@@ -148,15 +149,18 @@ public final class VentanaRegistro extends JFrame {
             if(e.getSource() == btnAnimal){
                 Mensaje = "Ha seleccionado la tematica de Animales";
                 JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                VentanaJuego ventanaJuego = new VentanaJuego("src/Diccionario/Animales.txt");
                 iniciarJuego();
                 
             }if(e.getSource() == btnColor){
                 Mensaje = "Ha seleccionado la tematica de Colores";
                 JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                VentanaJuego ventanaJuego = new VentanaJuego("src/Diccionario/Colores.txt");
                 iniciarJuego();
             }if(e.getSource() == btnFruta){
                 Mensaje = "Ha seleccionado la tematica de Frutas";
                 JOptionPane.showMessageDialog(null,Mensaje , "Advertencia", JOptionPane.INFORMATION_MESSAGE);
+                VentanaJuego ventanaJuego = new VentanaJuego("src/Diccionario/Frutas.txt");
                 iniciarJuego();
             }
         }
