@@ -5,8 +5,11 @@
 package Modelo;
 
 /**
- *
- * @author Vanesa
+ * @author Brigitte Vanesa Chavez Riascos, brigitte.chavez@correounivalle.edu.co
+ * @author Juan Camilo Capera Barrera, capera.juan@correounivalle.edu.co
+ * @Version v.1.0.0 date: 23/04/2023
+ * @class FPOE-750014C-01
+ * Miniproyecto 1 
  */
 public class Juego {
     
